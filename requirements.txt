@@ -1,0 +1,6 @@
+ultralytics
+clearml
+typer
+fastapi
+uvicorn
+loguru

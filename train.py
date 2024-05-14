@@ -7,6 +7,7 @@ def main(
     datasets: str = "../datasets/data.yaml",
     epochs: int = 100,
     imgsz: int = 1024,
+    batch: int = 16,
 ):
     try:
         from clearml import Task
@@ -16,7 +17,7 @@ def main(
         print("clearml not installed")
 
     model = YOLO(base_model)
-    results = model.train(data=datasets, epochs=epochs, imgsz=imgsz)
+    results = model.train(data=datasets, epochs=epochs, imgsz=imgsz, batch=batch)
     print(results)
 
 

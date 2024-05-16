@@ -5,14 +5,17 @@ from ultralytics import YOLO
 def main(
     base_model: str = "yolov8n.pt",
     datasets: str = "../datasets/data.yaml",
-    epochs: int = 100,
+    epochs: int = 40,
     imgsz: int = 1024,
-    batch: int = 16,
+    batch: int = 8,
 ):
     try:
         from clearml import Task
 
-        Task.init(project_name="yolo-doclaynet", task_name="yolov8n")
+        Task.init(
+            project_name="yolo-doclaynet",
+            task_name=f"base-model-{base_model}-epochs-{epochs}-imgsz-{imgsz}-batch-{batch}",
+        )
     except ImportError:
         print("clearml not installed")
 

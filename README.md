@@ -21,11 +21,16 @@ a fast and good performance method.
 
 1. Offer a script to turn DocLayNet dataset into YOLO detect training ready dataset.
 2. Offer train, eval and serve codes.
-3. Train and release 5 different sizes of [YOLO models](https://huggingface.co/hantian/yolo-doclaynet): `yolov8n`, `yolov8s`, `yolov8m`, `yolov8l` and `yolov8x`.
+3. Train and release 5 different sizes of [YOLO models](https://huggingface.co/hantian/yolo-doclaynet): `yolov8n`, `yolov8s`, `yolov8m`, `yolov8l` and `yolov8x`. (Only finish `yolov8n` now, I am training others.)
 
 ## How to use?
 
 ```python
+from ultralytics import YOLO
+
+model = YOLO("{path to model file}")
+pred = model("{path to test image}")
+print(pred)
 ```
 
 Or you can simply `python main.py` to serve the model.
@@ -54,3 +59,13 @@ DocLayNet can be found more details and download at this [link](https://github.c
   typically appearing in large font
 
 ### Prepare data
+
+TODO
+
+## Train & Eval
+
+TODO
+
+## Result
+
+TODO

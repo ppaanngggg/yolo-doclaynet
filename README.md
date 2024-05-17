@@ -29,7 +29,7 @@ a fast and good performance method.
 2. Offer train, eval and serve codes.
 3. Train and release 5 different sizes
    of [YOLO models](https://huggingface.co/hantian/yolo-doclaynet): `yolov8n`, `yolov8s`, `yolov8m`, `yolov8l`
-   and `yolov8x`. (Only finish `yolov8n` now, I am training others.)
+   and `yolov8x`. (still training)
 
 ## How to use?
 

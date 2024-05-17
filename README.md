@@ -60,9 +60,30 @@ DocLayNet can be found more details and download at this [link](https://github.c
 
 ### Prepare data
 
-TODO
+1. download DocLayNet dataset by this [link](https://codait-cos-dax.s3.us.cloud-object-storage.appdomain.cloud/dax-doclaynet/1.0.0/DocLayNet_core.zip)
+2. unzip to `datasets` folder
+3. use my convert script to make datasets ready for training
+
+```bash
+wget https://codait-cos-dax.s3.us.cloud-object-storage.appdomain.cloud/dax-doclaynet/1.0.0/DocLayNet_core.zip
+mkdir datasets
+mv DocLayNet_core.zip datasets/
+cd datasets/ && unzip DocLayNet_core.zip && rm DocLayNet_core.zip
+cd ../
+python convert_dataset.py
+```
 
 ## Train & Eval
+
+### train
+
+After preparing data, training is super easy. All duty jobs has been done by [Ultralytics](https://github.com/ultralytics/ultralytics). You can choose base models from this [link](https://docs.ultralytics.com/models/). I use the YOLOv8 series.
+
+```bash
+python train.py {base-model}
+```
+
+### eval
 
 TODO
 

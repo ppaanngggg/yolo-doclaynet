@@ -7,7 +7,7 @@ import typer
 import yaml
 
 
-def main(root_folder: Path = "../datasets"):
+def main(root_folder: Path = "./datasets"):
     with open(root_folder / "data.yaml", "w") as f:
         yaml.dump(
             {

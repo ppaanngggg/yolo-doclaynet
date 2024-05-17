@@ -3,8 +3,8 @@ from ultralytics import YOLO
 
 
 def main(
-    base_model: str = "yolov8n.pt",
-    datasets: str = "../datasets/data.yaml",
+    base_model: str,
+    datasets: str = "./datasets/data.yaml",
     epochs: int = 40,
     imgsz: int = 1024,
     batch: int = 8,

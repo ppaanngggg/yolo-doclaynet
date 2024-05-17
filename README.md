@@ -1,7 +1,13 @@
 # yolo-doclaynet
 
 <p align="center">
-        🤗 <a href="https://huggingface.co/hantian/yolo-doclaynet">Hugging Face</a>
+  🤗 <a href="https://huggingface.co/hantian/yolo-doclaynet">Hugging Face</a>
+</p>
+
+<p align="center">predict results by <b>yolov8n-doclaynet</b></p>
+<p align="center">
+  <img src="./test.png" width="400"  alt="page_0"/>
+  <img src="./annotated-test.png" width="400"  alt="page_1"/> 
 </p>
 
 ## Why this repo?
@@ -21,7 +27,9 @@ a fast and good performance method.
 
 1. Offer a script to turn DocLayNet dataset into YOLO detect training ready dataset.
 2. Offer train, eval and serve codes.
-3. Train and release 5 different sizes of [YOLO models](https://huggingface.co/hantian/yolo-doclaynet): `yolov8n`, `yolov8s`, `yolov8m`, `yolov8l` and `yolov8x`. (Only finish `yolov8n` now, I am training others.)
+3. Train and release 5 different sizes
+   of [YOLO models](https://huggingface.co/hantian/yolo-doclaynet): `yolov8n`, `yolov8s`, `yolov8m`, `yolov8l`
+   and `yolov8x`. (Only finish `yolov8n` now, I am training others.)
 
 ## How to use?
 
@@ -60,7 +68,8 @@ DocLayNet can be found more details and download at this [link](https://github.c
 
 ### Prepare data
 
-1. download DocLayNet dataset by this [link](https://codait-cos-dax.s3.us.cloud-object-storage.appdomain.cloud/dax-doclaynet/1.0.0/DocLayNet_core.zip)
+1. download DocLayNet dataset by
+   this [link](https://codait-cos-dax.s3.us.cloud-object-storage.appdomain.cloud/dax-doclaynet/1.0.0/DocLayNet_core.zip)
 2. unzip to `datasets` folder
 3. use my convert script to make datasets ready for training
 
@@ -77,7 +86,9 @@ python convert_dataset.py
 
 ### train
 
-After preparing data, training is super easy. All duty jobs has been done by [Ultralytics](https://github.com/ultralytics/ultralytics). You can choose base models from this [link](https://docs.ultralytics.com/models/). I use the YOLOv8 series.
+After preparing data, training is super easy. All duty jobs has been done
+by [Ultralytics](https://github.com/ultralytics/ultralytics). You can choose base models from
+this [link](https://docs.ultralytics.com/models/). I use the YOLOv8 series.
 
 ```bash
 python train.py {base-model}

@@ -41,7 +41,11 @@ pred = model("{path to test image}")
 print(pred)
 ```
 
-Or you can simply `python main.py` to serve the model.
+The predict result refer to this [doc](https://docs.ultralytics.com/modes/predict/#working-with-results)
+
+### Server
+
+You can simply `python main.py` to serve the model. Open http://localhost:8000/redoc check the API.
 
 ## Dataset
 

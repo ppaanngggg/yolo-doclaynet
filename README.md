@@ -41,7 +41,7 @@ pred = model("{path to test image}")
 print(pred)
 ```
 
-The predict result refer to this [doc](https://docs.ultralytics.com/modes/predict/#working-with-results)
+The definition of predict result please refer to the [doc](https://docs.ultralytics.com/modes/predict/#working-with-results).
 
 ### Server
 

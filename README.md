@@ -68,7 +68,7 @@ DocLayNet can be found more details and download at this [link](https://github.c
 - **Page-footer**: Repeating elements like page number at the bottom, outside of the
   normal text flow.
 - **Title**: Overall title of a document, (almost) exclusively on the first page and
-  typically appearing in large font
+  typically appearing in large font.
 
 ### Prepare data
 
@@ -90,18 +90,41 @@ python convert_dataset.py
 
 ### train
 
-After preparing data, training is super easy. All duty jobs has been done
-by [Ultralytics](https://github.com/ultralytics/ultralytics). You can choose base models from
-this [link](https://docs.ultralytics.com/models/). I use the YOLOv8 series.
+After preparing data, thanks to [Ultralytics](https://github.com/ultralytics/ultralytics), training is super easy. You
+can choose base models from this [link](https://docs.ultralytics.com/models/). I use the YOLOv8 series.
 
 ```bash
 python train.py {base-model}
 ```
 
-### eval
+### Eval
 
-TODO
+After training, you can evaluate your best model on test split.
+
+```bash
+python eval.py {path-to-your-model}
+```
 
 ## Result
 
+* Figure of overall `mAP50-95` between different models.
+
 TODO
+
+* Full table of `mAP50-95` compare between different models.
+
+| label          | images | boxes | yolov8n | yolov8s | yolov8m | yolov8l | yolov8x |
+|----------------|--------|-------|---------|---------|---------|---------|---------|
+| Caption        | 4983   | 1542  | 0.682   | 0.721   |         |         |         |
+| Footnote       | 4983   | 387   | 0.614   | 0.669   |         |         |         |
+| Formula        | 4983   | 1966  | 0.655   | 0.695   |         |         |         |
+| List-item      | 4983   | 10521 | 0.789   | 0.818   |         |         |         |
+| Page-footer    | 4983   | 3987  | 0.588   | 0.61    |         |         |         |
+| Page-header    | 4983   | 3365  | 0.707   | 0.754   |         |         |         |
+| Picture        | 4983   | 3497  | 0.723   | 0.762   |         |         |         |
+| Section-header | 4983   | 8544  | 0.709   | 0.727   |         |         |         |
+| Table          | 4983   | 2394  | 0.82    | 0.854   |         |         |         |
+| Text           | 4983   | 29917 | 0.845   | 0.86    |         |         |         |
+| Title          | 4983   | 334   | 0.762   | 0.806   |         |         |         |
+| **All**        | 4983   | 66454 | 0.718   | 0.752   |         |         |         |
+

@@ -41,7 +41,8 @@ pred = model("{path to test image}")
 print(pred)
 ```
 
-The definition of predict result please refer to the [doc](https://docs.ultralytics.com/modes/predict/#working-with-results).
+The definition of predict result please refer to
+the [doc](https://docs.ultralytics.com/modes/predict/#working-with-results).
 
 ### Server
 
@@ -115,16 +116,15 @@ TODO
 
 | label          | images | boxes | yolov8n | yolov8s | yolov8m | yolov8l | yolov8x |
 |----------------|--------|-------|---------|---------|---------|---------|---------|
-| Caption        | 4983   | 1542  | 0.682   | 0.721   |         |         |         |
-| Footnote       | 4983   | 387   | 0.614   | 0.669   |         |         |         |
-| Formula        | 4983   | 1966  | 0.655   | 0.695   |         |         |         |
-| List-item      | 4983   | 10521 | 0.789   | 0.818   |         |         |         |
-| Page-footer    | 4983   | 3987  | 0.588   | 0.61    |         |         |         |
-| Page-header    | 4983   | 3365  | 0.707   | 0.754   |         |         |         |
-| Picture        | 4983   | 3497  | 0.723   | 0.762   |         |         |         |
-| Section-header | 4983   | 8544  | 0.709   | 0.727   |         |         |         |
-| Table          | 4983   | 2394  | 0.82    | 0.854   |         |         |         |
-| Text           | 4983   | 29917 | 0.845   | 0.86    |         |         |         |
-| Title          | 4983   | 334   | 0.762   | 0.806   |         |         |         |
-| **All**        | 4983   | 66454 | 0.718   | 0.752   |         |         |         |
-
+| Caption        | 4983   | 1542  | 0.682   | 0.721   | 0.746   |         |         |
+| Footnote       | 4983   | 387   | 0.614   | 0.669   | 0.696   |         |         |
+| Formula        | 4983   | 1966  | 0.655   | 0.695   | 0.723   |         |         |
+| List-item      | 4983   | 10521 | 0.789   | 0.818   | 0.836   |         |         |
+| Page-footer    | 4983   | 3987  | 0.588   | 0.61    | 0.64    |         |         |
+| Page-header    | 4983   | 3365  | 0.707   | 0.754   | 0.769   |         |         |
+| Picture        | 4983   | 3497  | 0.723   | 0.762   | 0.789   |         |         |
+| Section-header | 4983   | 8544  | 0.709   | 0.727   | 0.742   |         |         |
+| Table          | 4983   | 2394  | 0.82    | 0.854   | 0.88    |         |         |
+| Text           | 4983   | 29917 | 0.845   | 0.86    | 0.876   |         |         |
+| Title          | 4983   | 334   | 0.762   | 0.806   | 0.83    |         |         |
+| **All**        | 4983   | 66454 | 0.718   | 0.752   | 0.775   |         |         |

@@ -3,7 +3,8 @@ from threading import Semaphore
 import cv2
 import numpy as np
 import uvicorn
-from fastapi import FastAPI, UploadFile
+from fastapi import FastAPI, UploadFile, HTTPException
+from loguru import logger
 from pydantic import BaseModel, Field
 from pydantic_settings import BaseSettings
 from ultralytics import YOLO
@@ -43,10 +44,13 @@ class DetectResponse(BaseModel):
 
 @app.post("/api/detect")
 def detect(image: UploadFile) -> DetectResponse:
+    logger.info(f"Received image: {image.filename}, {image.size}")
     with semaphore:
         image = cv2.imdecode(
             np.frombuffer(image.file.read(), np.uint8), cv2.IMREAD_COLOR
         )
+        if image is None:
+            raise HTTPException(status_code=400, detail="Invalid image")
         result = model.predict(image, verbose=False)[0]
     height = result.orig_shape[0]
     width = result.orig_shape[1]
@@ -58,6 +62,9 @@ def detect(image: UploadFile) -> DetectResponse:
                 box=[box[0] * width, box[1] * height, box[2] * width, box[3] * height],
             )
         )
+    logger.info(
+        f"Detected objects: {len(label_boxes)}, Image size: {width}x{height}, Speed: {result.speed}"
+    )
     return DetectResponse(label_boxes=label_boxes, speed=result.speed)
 
 

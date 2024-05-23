@@ -3,6 +3,7 @@
 <p align="center">
 <a href="https://huggingface.co/hantian/yolo-doclaynet">🤗 Hugging Face</a> | 
 <a href="https://buymeacoffee.com/ppaanngggg/e/257457">📁 YOLOv8l</a> |
+<a href="https://buymeacoffee.com/ppaanngggg/e/257777">📁 YOLOv8x</a>
 </p>
 
 <p align="center">predict results by <b>yolov8n-doclaynet</b></p>
@@ -33,7 +34,7 @@ a fast and good performance method.
    and `yolov8x`.
     - `yolov8n`, `yolov8s` and `yolov8m` can be found on [HuggingFace](https://huggingface.co/hantian/yolo-doclaynet).
     - `yolov8l` and `yolov8x` are only slightly better than `yolov8m`. If you really want to try, please buy
-      from [yolov8l](https://buymeacoffee.com/ppaanngggg/e/257457) and [yolov8x](), as I rent GPUs to train them.
+      from [yolov8l](https://buymeacoffee.com/ppaanngggg/e/257457) and [yolov8x](https://buymeacoffee.com/ppaanngggg/e/257777), as I rent GPUs to train them.
 
 ## How to use?
 

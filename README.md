@@ -3,7 +3,8 @@
 <p align="center">
 <a href="https://huggingface.co/hantian/yolo-doclaynet">🤗 Hugging Face</a> | 
 <a href="https://buymeacoffee.com/ppaanngggg/e/257457">📁 YOLOv8l</a> |
-<a href="https://buymeacoffee.com/ppaanngggg/e/257777">📁 YOLOv8x</a>
+<a href="https://buymeacoffee.com/ppaanngggg/e/257777">📁 YOLOv8x</a> |
+<a href="https://rapidapi.com/ppaanngggg/api/document-layout-analysis"> RapidAPI</a>
 </p>
 
 <p align="center">predict results by <b>yolov8n-doclaynet</b></p>

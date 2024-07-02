@@ -11,7 +11,7 @@ from ultralytics import YOLO
 
 
 class Conf(BaseSettings):
-    model_path: str = Field(default="yolov8n-doclaynet.pt", description="Model path")
+    model_path: str = Field(default="yolo-doclaynet.pt", description="Model path")
     max_connections: int = Field(
         default=10, description="Maximum number of connections"
     )

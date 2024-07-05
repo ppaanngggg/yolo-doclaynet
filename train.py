@@ -8,6 +8,8 @@ def main(
     epochs: int = 40,
     imgsz: int = 1024,
     batch: int = 8,
+    dropout: float = 0.0,
+    resume: bool = False,
 ):
     try:
         from clearml import Task
@@ -20,7 +22,14 @@ def main(
         print("clearml not installed")
 
     model = YOLO(base_model)
-    results = model.train(data=datasets, epochs=epochs, imgsz=imgsz, batch=batch)
+    results = model.train(
+        data=datasets,
+        epochs=epochs,
+        imgsz=imgsz,
+        batch=batch,
+        dropout=dropout,
+        resume=resume,
+    )
     print(results)
 
 

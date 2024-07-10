@@ -11,7 +11,8 @@
 </p>
 
 **👏 Update 7/10/2024 - Add YOLOv10 models.**
-**Update 6/21/2024 - Add YOLOv9 models.**
+
+**👏 Update 6/21/2024 - Add YOLOv9 models.**
 
 <p align="center">predict results by <b>yolov8n-doclaynet</b></p>
 <p align="center">

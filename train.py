@@ -9,6 +9,7 @@ def main(
     imgsz: int = 1024,
     batch: int = 8,
     dropout: float = 0.0,
+    seed: int = 0,
     resume: bool = False,
 ):
     try:
@@ -28,6 +29,7 @@ def main(
         imgsz=imgsz,
         batch=batch,
         dropout=dropout,
+        seed=seed,
         resume=resume,
     )
     print(results)

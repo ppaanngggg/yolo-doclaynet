@@ -11,6 +11,7 @@ def main(
     dropout: float = 0.0,
     seed: int = 0,
     resume: bool = False,
+    dfl: float = 1.5,
 ):
     try:
         from clearml import Task
@@ -31,6 +32,7 @@ def main(
         dropout=dropout,
         seed=seed,
         resume=resume,
+        dfl=dfl,
     )
     print(results)
 

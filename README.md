@@ -8,8 +8,7 @@
 <a href="https://buymeacoffee.com/ppaanngggg/e/275645">📁 YOLOv10x</a> |
 <a href="https://buymeacoffee.com/ppaanngggg/e/268779">📁 YOLOv9c</a> |
 <a href="https://buymeacoffee.com/ppaanngggg/e/257457">📁 YOLOv8l</a> |
-<a href="https://buymeacoffee.com/ppaanngggg/e/257777">📁 YOLOv8x</a> |
-<a href="https://rapidapi.com/ppaanngggg/api/document-layout-analysis"> 🐙 RapidAPI</a>
+<a href="https://buymeacoffee.com/ppaanngggg/e/257777">📁 YOLOv8x</a>
 </p>
 
 **👏 Update 2024/10/07 - Add YOLOv11 models.**

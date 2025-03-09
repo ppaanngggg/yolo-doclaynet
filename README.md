@@ -1,52 +1,64 @@
-# yolo-doclaynet
+<div align="center">
 
-<p align="left">
-<a href="https://huggingface.co/hantian/yolo-doclaynet">🤗 Hugging Face</a> | 
-<a href="https://buymeacoffee.com/ppaanngggg/e/313968">📁 YOLOv11l</a> |
-<a href="https://buymeacoffee.com/ppaanngggg/e/313976">📁 YOLOv11x</a> |
-<a href="https://buymeacoffee.com/ppaanngggg/e/275642">📁 YOLOv10l</a> |
-<a href="https://buymeacoffee.com/ppaanngggg/e/275645">📁 YOLOv10x</a> |
-<a href="https://buymeacoffee.com/ppaanngggg/e/268779">📁 YOLOv9c</a> |
-<a href="https://buymeacoffee.com/ppaanngggg/e/257457">📁 YOLOv8l</a> |
-<a href="https://buymeacoffee.com/ppaanngggg/e/257777">📁 YOLOv8x</a>
-</p>
+# YOLO DocLayNet
 
-**👏 Update 2024/10/07 - Add YOLOv11 models.**
+[![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Models-blue)](https://huggingface.co/hantian/yolo-doclaynet)
 
-**👏 Update 2024/07/10 - Add YOLOv10 models.**
+</div>
 
-**👏 Update 2024/06/21 - Add YOLOv9 models.**
+### 🔥 Latest Updates
 
-<p align="left">
-  <img src="./test.png" width="400"  alt="page_0"/>
-  <img src="./annotated-test.png" width="400"  alt="page_1"/> 
-</p>
-<p align="left">predict results by <b>yolov8n-doclaynet</b></p>
+- **2025/03/10**: Released YOLOv12 models - **Get YOLOv12x (coming soon)**
+- **2024/10/07**: Released YOLOv11 models - [**Get YOLOv11x**](https://buymeacoffee.com/ppaanngggg/e/313976)
+- **2024/07/10**: Released YOLOv10 models - [**Get YOLOv10x**](https://buymeacoffee.com/ppaanngggg/e/275645)
+- **2024/06/21**: Released YOLOv9 models
+
+### 🎯 Model Demo
+
+<div align="center">
+  <p float="left">
+    <img src="./test.png" width="48%" alt="Original Document"/>
+    <img src="./annotated-test.png" width="48%" alt="YOLO Detection Result"/>
+  </p>
+  <p><em>Document layout detection using <strong>YOLOv8n-DocLayNet</strong></em></p>
+</div>
+
+## 📊 Performance Results
+
+### Model Performance Comparison Chart (mAP50-95)
+
+<div align="center">
+  <img src="./plot.png" width="800px" alt="Model Performance Comparison Plot"/>
+  <p><em>Performance comparison of different YOLO models on DocLayNet test dataset</em></p>
+</div>
+
+### Detailed Model Performance Metrics (Parameters/mAP50-95)
+
+| Size/Model | YOLOv12     | YOLOv11     | YOLOv10     | YOLOv9      | YOLOv8      |
+| ---------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+| Nano       | 2.6M/0.756  | 2.6M/0.735  | 2.3M/0.730  | 2.0M/0.737  | 3.2M/0.718  |
+| Small      | 9.3M/0.782  | 9.4M/0.767  | 7.2M/0.762  | 7.2M/0.766  | 11.2M/0.752 |
+| Medium     | 20.2M/0.788 | 20.1M/0.781 | 15.4M/0.780 | 20.1M/0.775 | 25.9M/0.775 |
+| Large      | 26.4M/0.792 | 25.3M/0.793 | 24.4M/0.790 | 25.5M/0.782 | 43.7M/0.783 |
+| Extra      | 59.1M/-     | 56.9M/0.794 | 29.5M/0.793 | -           | 68.2M/0.787 |
+
+Refer to [Detail Results](#detail-results)
 
 ## Why this repo?
 
-You know that RAG is very popular these days. There are many applications that support talking to documents. However,
-there is a huge performance drop when talking to a complex document due to the complex structures. So it's a challenge
-to extract content from complex document and organize it into parsable form. This repo aims to solve this challenge with
-a fast and good performance method.
+RAG (Retrieval Augmented Generation) is widely used today for chatting with documents. But when documents have complex layouts, the performance often suffers. It's hard to properly extract and structure content from these complex documents. This project offers a fast and effective solution to this problem.
 
-1. `YOLO` is the most advenced detect model developed by [Ultralytics](https://github.com/ultralytics/ultralytics). YOLO
-   has 5 different sizes of base model and a super powerful framework for training and deployment. So I chose YOLO to
-   solve this challenge.
-2. `DocLayNet` is a human-annotated document layout segmentation dataset containing 80863 pages from a broad variety of
-   document sources. As far as I know, it's the most qualified document layout analysis dataset.
+1. `YOLO` is a leading object detection model by [Ultralytics](https://github.com/ultralytics/ultralytics). It comes in 5 different sizes and has a robust framework for training and deployment. I picked YOLO because of these strengths.
+
+2. `DocLayNet` is a dataset of 80,863 document pages with human-labeled layout information. It includes many different types of documents and is currently the best dataset available for document layout analysis.
 
 ## What I did?
 
-1. Offer a script to turn DocLayNet dataset into YOLO detect training ready dataset.
-2. Offer train, eval and serve codes.
-3. Train and release 5 different sizes
-   of YOLOv8 models: `yolov8n`, `yolov8s`, `yolov8m`, `yolov8l`
-   and `yolov8x`.
-    - `yolov8n`, `yolov8s` and `yolov8m` can be found on [HuggingFace](https://huggingface.co/hantian/yolo-doclaynet).
-    - `yolov8l` and `yolov8x` are only slightly better than `yolov8m`. If you really want to try, please buy
-      from [yolov8l](https://buymeacoffee.com/ppaanngggg/e/257457)
-      and [yolov8x](https://buymeacoffee.com/ppaanngggg/e/257777), as I rent GPUs to train them.
+Here's what I did:
+
+1. Created a script that converts DocLayNet data into YOLO's training format
+2. Built code for training, testing and running the models
+3. Trained and shared YOLO models in all sizes and versions
 
 ## How to use?
 
@@ -123,26 +135,94 @@ After training, you can evaluate your best model on test split.
 python eval.py {path-to-your-model}
 ```
 
-## Result
+## Detail Results
 
-* Figure of overall `mAP50-95` on `test` between different models.
+### YOLOv12 Models
 
-<img src="./plot.png" width="800"  alt="plot"/>
+| label          | boxes | yolov12n | yolov12s | yolov12m | yolov12l | yolov12x |
+| -------------- | ----- | -------- | -------- | -------- | -------- | -------- |
+| Params (M)     |       | 2.6      | 9.3      | 20.2     | 26.4     | 59.1     |
+| Caption        | 1542  | 0.744    | 0.763    | 0.776    | 0.78     |          |
+| Footnote       | 387   | 0.671    | 0.712    | 0.717    | 0.711    |          |
+| Formula        | 1966  | 0.688    | 0.72     | 0.734    | 0.742    |          |
+| List-item      | 10521 | 0.828    | 0.845    | 0.851    | 0.85     |          |
+| Page-footer    | 3987  | 0.624    | 0.649    | 0.649    | 0.656    |          |
+| Page-header    | 3365  | 0.737    | 0.774    | 0.772    | 0.794    |          |
+| Picture        | 3497  | 0.765    | 0.799    | 0.793    | 0.798    |          |
+| Section-header | 8544  | 0.732    | 0.751    | 0.76     | 0.764    |          |
+| Table          | 2394  | 0.861    | 0.879    | 0.882    | 0.889    |          |
+| Text           | 29917 | 0.863    | 0.878    | 0.884    | 0.884    |          |
+| Title          | 334   | 0.806    | 0.831    | 0.848    | 0.842    |          |
+| **All**        | 66454 | 0.756    | 0.782    | 0.788    | 0.792    |          |
 
-* Full table of `mAP50-95` on `test` compare between different models.
+### YOLOv11 Models
 
-| label          | boxes | yolov8n | yolov9t | yolov10n | yolov11n | yolov8s | yolov9s | yolov10s | yolov11s | yolov8m | yolov9m | yolov10m | yolov11m | yolov10b | yolov8l | yolov9c | yolov10l | yolov11l | yolov8x | yolov10x | yolov11x |
-|----------------|-------|---------|---------|----------|----------|---------|---------|----------|----------|---------|---------|----------|----------|----------|---------|---------|----------|----------|---------|----------|----------|
-| Params (M)     |       | 3.2     | 2.0     | 2.3      | 2.6      | 11.2    | 7.2     | 7.2      | 9.4      | 25.9    | 20.1    | 15.4     | 20.1     | 19.1     | 43.7    | 25.5    | 24.4     | 25.3     | 68.2    | 29.5     | 56.9     |
-| Caption        | 1542  | 0.682   | 0.68    | 0.713    | 0.717    | 0.721   | 0.735   | 0.738    | 0.744    | 0.746   | 0.749   | 0.761    | 0.746    | 0.762    | 0.75    | 0.746   | 0.772    | 0.772    | 0.753   | 0.77     | 0.765    |
-| Footnote       | 387   | 0.614   | 0.638   | 0.642    | 0.634    | 0.669   | 0.684   | 0.681    | 0.683    | 0.696   | 0.693   | 0.713    | 0.701    | 0.72     | 0.702   | 0.689   | 0.722    | 0.715    | 0.717   | 0.725    | 0.71     |
-| Formula        | 1966  | 0.655   | 0.678   | 0.648    | 0.673    | 0.695   | 0.719   | 0.698    | 0.705    | 0.723   | 0.737   | 0.727    | 0.729    | 0.715    | 0.75    | 0.752   | 0.736    | 0.75     | 0.747   | 0.76     | 0.765    |
-| List-item      | 10521 | 0.789   | 0.802   | 0.803    | 0.81     | 0.818   | 0.827   | 0.833    | 0.836    | 0.836   | 0.838   | 0.845    | 0.843    | 0.844    | 0.841   | 0.843   | 0.851    | 0.847    | 0.841   | 0.849    | 0.845    |
-| Page-footer    | 3987  | 0.588   | 0.599   | 0.6      | 0.591    | 0.61    | 0.612   | 0.614    | 0.621    | 0.64    | 0.62    | 0.645    | 0.653    | 0.659    | 0.641   | 0.65    | 0.671    | 0.678    | 0.655   | 0.661    | 0.684    |
-| Page-header    | 3365  | 0.707   | 0.731   | 0.699    | 0.704    | 0.754   | 0.77    | 0.761    | 0.76     | 0.769   | 0.77    | 0.765    | 0.778    | 0.774    | 0.776   | 0.785   | 0.779    | 0.788    | 0.784   | 0.79     | 0.795    |
-| Picture        | 3497  | 0.723   | 0.764   | 0.749    | 0.758    | 0.762   | 0.789   | 0.778    | 0.783    | 0.789   | 0.787   | 0.79     | 0.8      | 0.803    | 0.796   | 0.796   | 0.8      | 0.805    | 0.805   | 0.806    | 0.802    |
-| Section-header | 8544  | 0.709   | 0.72    | 0.71     | 0.713    | 0.727   | 0.736   | 0.729    | 0.745    | 0.742   | 0.742   | 0.742    | 0.753    | 0.744    | 0.75    | 0.741   | 0.743    | 0.75     | 0.748   | 0.748    | 0.751    |
-| Table          | 2394  | 0.82    | 0.86    | 0.839    | 0.846    | 0.854   | 0.88    | 0.863    | 0.874    | 0.88    | 0.881   | 0.879    | 0.88     | 0.879    | 0.885   | 0.884   | 0.891    | 0.891    | 0.886   | 0.889    | 0.89     |
-| Text           | 29917 | 0.845   | 0.856   | 0.85     | 0.851    | 0.86    | 0.869   | 0.868    | 0.869    | 0.876   | 0.874   | 0.879    | 0.878    | 0.874    | 0.878   | 0.877   | 0.88     | 0.88     | 0.877   | 0.882    | 0.883    |
-| Title          | 334   | 0.762   | 0.778   | 0.774    | 0.793    | 0.806   | 0.81    | 0.822    | 0.817    | 0.83    | 0.836   | 0.838    | 0.832    | 0.846    | 0.846   | 0.838   | 0.845    | 0.844    | 0.84    | 0.848    | 0.848    |
-| **All**        | 66454 | 0.718   | 0.737   | 0.73     | 0.735    | 0.752   | 0.766   | 0.762    | 0.767    | 0.775   | 0.775   | 0.78     | 0.781    | 0.784    | 0.783   | 0.782   | 0.79     | 0.793    | 0.787   | 0.793    | 0.794    |
+| label          | boxes | yolov11n | yolov11s | yolov11m | yolov11l | yolov11x |
+| -------------- | ----- | -------- | -------- | -------- | -------- | -------- |
+| Params (M)     |       | 2.6      | 9.4      | 20.1     | 25.3     | 56.9     |
+| Caption        | 1542  | 0.717    | 0.744    | 0.746    | 0.772    | 0.765    |
+| Footnote       | 387   | 0.634    | 0.683    | 0.701    | 0.715    | 0.71     |
+| Formula        | 1966  | 0.673    | 0.705    | 0.729    | 0.75     | 0.765    |
+| List-item      | 10521 | 0.81     | 0.836    | 0.843    | 0.847    | 0.845    |
+| Page-footer    | 3987  | 0.591    | 0.621    | 0.653    | 0.678    | 0.684    |
+| Page-header    | 3365  | 0.704    | 0.76     | 0.778    | 0.788    | 0.795    |
+| Picture        | 3497  | 0.758    | 0.783    | 0.8      | 0.805    | 0.802    |
+| Section-header | 8544  | 0.713    | 0.745    | 0.753    | 0.75     | 0.751    |
+| Table          | 2394  | 0.846    | 0.874    | 0.88     | 0.891    | 0.89     |
+| Text           | 29917 | 0.851    | 0.869    | 0.878    | 0.88     | 0.883    |
+| Title          | 334   | 0.793    | 0.817    | 0.832    | 0.844    | 0.848    |
+| **All**        | 66454 | 0.735    | 0.767    | 0.781    | 0.793    | 0.794    |
+
+### YOLOv10 Models
+
+| label          | boxes | yolov10n | yolov10s | yolov10m | yolov10b | yolov10l | yolov10x |
+| -------------- | ----- | -------- | -------- | -------- | -------- | -------- | -------- |
+| Params (M)     |       | 2.3      | 7.2      | 15.4     | 19.1     | 24.4     | 29.5     |
+| Caption        | 1542  | 0.713    | 0.738    | 0.761    | 0.762    | 0.772    | 0.77     |
+| Footnote       | 387   | 0.642    | 0.681    | 0.713    | 0.72     | 0.722    | 0.725    |
+| Formula        | 1966  | 0.648    | 0.698    | 0.727    | 0.715    | 0.736    | 0.76     |
+| List-item      | 10521 | 0.803    | 0.833    | 0.845    | 0.844    | 0.851    | 0.849    |
+| Page-footer    | 3987  | 0.6      | 0.614    | 0.645    | 0.659    | 0.671    | 0.661    |
+| Page-header    | 3365  | 0.699    | 0.761    | 0.765    | 0.774    | 0.779    | 0.79     |
+| Picture        | 3497  | 0.749    | 0.778    | 0.79     | 0.803    | 0.8      | 0.806    |
+| Section-header | 8544  | 0.71     | 0.729    | 0.742    | 0.744    | 0.743    | 0.748    |
+| Table          | 2394  | 0.839    | 0.863    | 0.879    | 0.879    | 0.891    | 0.889    |
+| Text           | 29917 | 0.85     | 0.868    | 0.879    | 0.874    | 0.88     | 0.882    |
+| Title          | 334   | 0.774    | 0.822    | 0.838    | 0.846    | 0.845    | 0.848    |
+| **All**        | 66454 | 0.73     | 0.762    | 0.78     | 0.784    | 0.79     | 0.793    |
+
+### YOLOv9 Models
+
+| label          | boxes | yolov9t | yolov9s | yolov9m | yolov9c |
+| -------------- | ----- | ------- | ------- | ------- | ------- |
+| Params (M)     |       | 2.0     | 7.2     | 20.1    | 25.5    |
+| Caption        | 1542  | 0.68    | 0.735   | 0.749   | 0.746   |
+| Footnote       | 387   | 0.638   | 0.684   | 0.693   | 0.689   |
+| Formula        | 1966  | 0.678   | 0.719   | 0.737   | 0.752   |
+| List-item      | 10521 | 0.802   | 0.827   | 0.838   | 0.843   |
+| Page-footer    | 3987  | 0.599   | 0.612   | 0.62    | 0.65    |
+| Page-header    | 3365  | 0.731   | 0.77    | 0.77    | 0.785   |
+| Picture        | 3497  | 0.764   | 0.789   | 0.787   | 0.796   |
+| Section-header | 8544  | 0.72    | 0.736   | 0.742   | 0.741   |
+| Table          | 2394  | 0.86    | 0.88    | 0.881   | 0.884   |
+| Text           | 29917 | 0.856   | 0.869   | 0.874   | 0.877   |
+| Title          | 334   | 0.778   | 0.81    | 0.836   | 0.838   |
+| **All**        | 66454 | 0.737   | 0.766   | 0.775   | 0.782   |
+
+### YOLOv8 Models
+
+| label          | boxes | yolov8n | yolov8s | yolov8m | yolov8l | yolov8x |
+| -------------- | ----- | ------- | ------- | ------- | ------- | ------- |
+| Params (M)     |       | 3.2     | 11.2    | 25.9    | 43.7    | 68.2    |
+| Caption        | 1542  | 0.682   | 0.721   | 0.746   | 0.75    | 0.753   |
+| Footnote       | 387   | 0.614   | 0.669   | 0.696   | 0.702   | 0.717   |
+| Formula        | 1966  | 0.655   | 0.695   | 0.723   | 0.75    | 0.747   |
+| List-item      | 10521 | 0.789   | 0.818   | 0.836   | 0.841   | 0.841   |
+| Page-footer    | 3987  | 0.588   | 0.61    | 0.64    | 0.641   | 0.655   |
+| Page-header    | 3365  | 0.707   | 0.754   | 0.769   | 0.776   | 0.784   |
+| Picture        | 3497  | 0.723   | 0.762   | 0.789   | 0.796   | 0.805   |
+| Section-header | 8544  | 0.709   | 0.727   | 0.742   | 0.75    | 0.748   |
+| Table          | 2394  | 0.82    | 0.854   | 0.88    | 0.885   | 0.886   |
+| Text           | 29917 | 0.845   | 0.86    | 0.876   | 0.878   | 0.877   |
+| Title          | 334   | 0.762   | 0.806   | 0.83    | 0.846   | 0.84    |
+| **All**        | 66454 | 0.718   | 0.752   | 0.775   | 0.783   | 0.787   |

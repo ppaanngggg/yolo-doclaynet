@@ -1,10 +1,9 @@
 import typer
-from ultralytics import RTDETR, YOLO
+from ultralytics import YOLO
 
 
 def main(
     base_model: str,
-    use_rtdetr: bool = False,
     datasets: str = "./datasets/data.yaml",
     epochs: int = 40,
     imgsz: int = 1024,
@@ -21,10 +20,7 @@ def main(
     except ImportError:
         print("clearml not installed")
 
-    if use_rtdetr:
-        model = RTDETR(base_model)
-    else:
-        model = YOLO(base_model)
+    model = YOLO(base_model)
     results = model.train(
         data=datasets,
         epochs=epochs,

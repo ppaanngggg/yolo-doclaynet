@@ -1,5 +1,5 @@
 import typer
-from ultralytics import YOLO, RTDETR
+from ultralytics import RTDETR, YOLO
 
 
 def main(
@@ -9,17 +9,14 @@ def main(
     epochs: int = 40,
     imgsz: int = 1024,
     batch: int = 8,
-    dropout: float = 0.0,
-    seed: int = 0,
-    resume: bool = False,
-    dfl: float = 1.5,
+    seed: int = 42,
 ):
     try:
         from clearml import Task
 
         Task.init(
             project_name="yolo-doclaynet",
-            task_name=f"base-model-{base_model}-epochs-{epochs}-imgsz-{imgsz}-batch-{batch}",
+            task_name=f"{base_model}-epochs-{epochs}-imgsz-{imgsz}-batch-{batch}",
         )
     except ImportError:
         print("clearml not installed")
@@ -33,10 +30,7 @@ def main(
         epochs=epochs,
         imgsz=imgsz,
         batch=batch,
-        dropout=dropout,
         seed=seed,
-        resume=resume,
-        dfl=dfl,
     )
     print(results)
 

@@ -1,6 +1,8 @@
 ultralytics
+albumentations
 clearml
 typer
+# for server
 fastapi
 uvicorn
 loguru

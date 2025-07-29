@@ -10,7 +10,6 @@ def main(
 ):
     model = YOLO(model)
     metrics = model.val(data=datasets, split=split, batch=batch)
-    print(metrics)
 
 
 if __name__ == "__main__":

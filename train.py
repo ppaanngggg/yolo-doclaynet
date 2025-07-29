@@ -28,7 +28,6 @@ def main(
         batch=batch,
         seed=seed,
     )
-    print(results)
 
 
 if __name__ == "__main__":

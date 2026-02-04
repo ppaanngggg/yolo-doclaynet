@@ -10,6 +10,7 @@ def main(
     batch: int = 8,
     seed: int = 42,
     mosaic: float = 1.0,  # https://docs.ultralytics.com/guides/yolo-data-augmentation/#mosaic-mosaic
+    resume: bool = False,
 ):
     try:
         from clearml import Task
@@ -23,7 +24,13 @@ def main(
 
     model = YOLO(base_model)
     model.train(
-        data=datasets, epochs=epochs, imgsz=imgsz, batch=batch, seed=seed, mosaic=mosaic
+        data=datasets,
+        epochs=epochs,
+        imgsz=imgsz,
+        batch=batch,
+        seed=seed,
+        mosaic=mosaic,
+        resume=resume,
     )
 
 
